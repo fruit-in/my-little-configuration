@@ -136,6 +136,7 @@
     xosd
     (python3.withPackages(ps: with ps; [ # {{{
       cachetools
+      django
       jupyter
       Keras
       matplotlib
