@@ -132,6 +132,7 @@
     usermount
     wget
     wmname
+    xmind
     xosd
     (python3.withPackages(ps: with ps; [ # {{{
       cachetools
