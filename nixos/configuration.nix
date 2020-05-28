@@ -135,7 +135,6 @@
     xosd
     (python3.withPackages(ps: with ps; [ # {{{
       cachetools
-      django
       jupyter
       Keras
       matplotlib
@@ -247,6 +246,8 @@
         set showmatch
         set mouse=a
         set cursorline
+
+        autocmd Filetype html setlocal sw=2 ts=2
       ''; # }}}
     }) # }}}
   ]; # }}}
