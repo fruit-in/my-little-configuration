@@ -288,6 +288,8 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  programs.java.enable = true;
+
   programs.zsh = { # {{{
     enable = true;
     autosuggestions.enable = true;
