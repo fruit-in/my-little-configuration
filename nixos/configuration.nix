@@ -521,11 +521,6 @@
 
   sound.enable = true;
 
-  services.nginx = { # {{{
-    enable = true;
-    virtualHosts."localhost".root = "/var/www/html";
-  }; # }}}
-
   system.stateVersion = "20.03";
 
   time.timeZone = "Etc/GMT-8";
