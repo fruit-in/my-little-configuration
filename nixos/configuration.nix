@@ -134,14 +134,10 @@
     xmind
     xosd
     (python3.withPackages(ps: with ps; [ # {{{
-      cachetools
       jupyter
-      Keras
       matplotlib
       ptpython
       pytorch
-      shapely
-      tensorflow
       tensorflow-tensorboard
       torchvision
       tqdm
