@@ -306,8 +306,8 @@
   services.tlp = { # {{{
     enable = true;
     extraConfig = ''
-      START_CHARGE_THRESH_BAT1=60
-      STOP_CHARGE_THRESH_BAT1=80
+      START_CHARGE_THRESH_BAT1=90
+      STOP_CHARGE_THRESH_BAT1=93
     '';
   }; # }}}
 
