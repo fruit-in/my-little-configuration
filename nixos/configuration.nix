@@ -287,6 +287,8 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  programs.adb.enable = true;
+
   programs.java.enable = true;
 
   programs.zsh = { # {{{
@@ -530,7 +532,7 @@
     isNormalUser = true;
     home = "/home/indium";
     description = "in";
-    extraGroups = ["wheel" "vboxusers"];
+    extraGroups = ["adbusers" "wheel" "vboxusers"];
   }; # }}}
 
   virtualisation.virtualbox.host = { # {{{
