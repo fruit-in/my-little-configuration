@@ -118,7 +118,6 @@
     haskellPackages.xmobar
     imagemagick
     kindlegen
-    kotlin
     libreoffice
     masterpdfeditor
     patchelf
@@ -150,7 +149,6 @@
         auto-pairs
         ctrlp-vim
         indentLine
-        kotlin-vim
         nerdtree
         rust-vim
         syntastic
