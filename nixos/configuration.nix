@@ -119,8 +119,10 @@
     imagemagick
     kindlegen
     libreoffice
+    lolcode
     masterpdfeditor
     patchelf
+    php
     proxychains
     rustup
     scrot
