@@ -122,7 +122,6 @@
     lolcode
     masterpdfeditor
     patchelf
-    php
     proxychains
     rustup
     scrot
