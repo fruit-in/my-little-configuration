@@ -119,7 +119,6 @@
     imagemagick
     kindlegen
     libreoffice
-    lolcode
     masterpdfeditor
     patchelf
     proxychains
