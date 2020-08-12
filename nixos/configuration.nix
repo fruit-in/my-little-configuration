@@ -120,6 +120,7 @@
     kindlegen
     libreoffice
     masterpdfeditor
+    nim
     patchelf
     proxychains
     rustup
@@ -150,6 +151,7 @@
         ctrlp-vim
         indentLine
         nerdtree
+        nim-vim
         rust-vim
         syntastic
         tagbar
