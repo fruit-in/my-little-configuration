@@ -123,6 +123,7 @@
     nim
     patchelf
     proxychains
+    ruby
     rustup
     scrot
     shadowsocks-libev
