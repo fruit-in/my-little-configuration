@@ -535,7 +535,12 @@
     isNormalUser = true;
     home = "/home/indium";
     description = "in";
-    extraGroups = ["adbusers" "wheel" "vboxusers"];
+    extraGroups = ["adbusers" "docker" "wheel" "vboxusers"];
+  }; # }}}
+
+  virtualisation.docker = { # {{{
+    enable = true;
+    extraOptions = "--registry-mirror=https://registry.docker-cn.com";
   }; # }}}
 
   virtualisation.virtualbox.host = { # {{{
