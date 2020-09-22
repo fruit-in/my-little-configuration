@@ -118,10 +118,8 @@
     haskellPackages.xmobar
     imagemagick
     kindlegen
-    kotlin
     libreoffice
     masterpdfeditor
-    nim
     patchelf
     proxychains
     ruby
@@ -151,9 +149,7 @@
         auto-pairs
         ctrlp-vim
         indentLine
-        kotlin-vim
         nerdtree
-        nim-vim
         rust-vim
         syntastic
         tagbar
