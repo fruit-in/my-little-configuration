@@ -103,6 +103,7 @@
 
   environment.systemPackages = with pkgs; [ # {{{
     androidStudioPackages.beta
+    arduino
     binutils
     ctags
     dmenu
