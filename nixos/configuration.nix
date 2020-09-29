@@ -139,9 +139,6 @@
       jupyter
       matplotlib
       ptpython
-      pytorch
-      tensorflow-tensorboard
-      torchvision
       tqdm
     ])) # }}}
     (vim_configurable.customize { # {{{
