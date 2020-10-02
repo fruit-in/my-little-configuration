@@ -118,7 +118,6 @@
     haskellPackages.ghc
     haskellPackages.xmobar
     imagemagick
-    j
     kindlegen
     libreoffice
     masterpdfeditor
