@@ -258,6 +258,8 @@
     ];
   }; # }}}
 
+  hardware.bluetooth.enable = true;
+
   hardware.opengl.driSupport32Bit = true;
 
   hardware.trackpoint = { # {{{
