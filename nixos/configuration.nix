@@ -105,6 +105,7 @@
     androidStudioPackages.beta
     binutils
     ctags
+    dash
     dmenu
     fcitx-configtool
     feh
@@ -119,6 +120,7 @@
     imagemagick
     kindlegen
     libreoffice
+    lolcat
     masterpdfeditor
     patchelf
     ponyc
