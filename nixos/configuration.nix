@@ -118,7 +118,6 @@
     haskellPackages.ghc
     haskellPackages.xmobar
     imagemagick
-    kindlegen
     libreoffice
     lolcat
     masterpdfeditor
@@ -143,7 +142,7 @@
       ptpython
       tqdm
     ])) # }}}
-    (vim_configurable.customize { # {{{
+    ((vim_configurable.override { python = python3; }).customize { # {{{
       name = "vim";
       vimrcConfig.plug.plugins = with pkgs.vimPlugins; [ # {{{
         auto-pairs
@@ -159,7 +158,7 @@
         vim-devicons
         vim-fugitive
         vim-nix
-        youcompleteme
+        YouCompleteMe
       ]; # }}}
       vimrcConfig.customRC = ''" {{{
         " indentLine settings
@@ -311,10 +310,10 @@
 
   services.tlp = { # {{{
     enable = true;
-    extraConfig = ''
-      START_CHARGE_THRESH_BAT1=100
-      STOP_CHARGE_THRESH_BAT1=100
-    '';
+    settings = {
+      START_CHARGE_THRESH_BAT1 = 100;
+      STOP_CHARGE_THRESH_BAT1 = 100;
+    };
   }; # }}}
 
   services.xserver = { # {{{
@@ -523,7 +522,7 @@
 
   sound.enable = true;
 
-  system.stateVersion = "20.03";
+  system.stateVersion = "20.09";
 
   time.timeZone = "Etc/GMT-8";
 
