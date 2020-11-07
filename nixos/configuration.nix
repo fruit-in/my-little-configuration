@@ -253,10 +253,8 @@
   }; # }}}
 
   fonts = { # {{{
-    enableFontDir = true;
-    fonts = with pkgs; [
-      wqy_microhei
-    ];
+    fontDir.enable = true;
+    fonts = with pkgs; [ wqy_microhei ];
   }; # }}}
 
   hardware.opengl.driSupport32Bit = true;
@@ -521,7 +519,7 @@
 
   sound.enable = true;
 
-  system.stateVersion = "20.09";
+  system.stateVersion = "21.03";
 
   time.timeZone = "Etc/GMT-8";
 
@@ -531,7 +529,7 @@
     isNormalUser = true;
     home = "/home/indium";
     description = "in";
-    extraGroups = ["adbusers" "wheel" "vboxusers"];
+    extraGroups = [ "adbusers" "wheel" "vboxusers" ];
   }; # }}}
 
   virtualisation.virtualbox.host = { # {{{
@@ -539,5 +537,4 @@
     enable = true;
     enableExtensionPack = true;
   }; # }}}
-
 }
