@@ -120,7 +120,6 @@
     imagemagick
     libreoffice
     lolcat
-    masterpdfeditor
     patchelf
     ponyc
     proxychains
@@ -530,12 +529,7 @@
     isNormalUser = true;
     home = "/home/indium";
     description = "in";
-    extraGroups = ["adbusers" "docker" "wheel" "vboxusers"];
-  }; # }}}
-
-  virtualisation.docker = { # {{{
-    enable = true;
-    extraOptions = "--registry-mirror=https://registry.docker-cn.com";
+    extraGroups = ["adbusers" "wheel" "vboxusers"];
   }; # }}}
 
   virtualisation.virtualbox.host = { # {{{
