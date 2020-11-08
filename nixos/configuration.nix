@@ -105,7 +105,6 @@
     androidStudioPackages.beta
     binutils
     ctags
-    dash
     dmenu
     fcitx-configtool
     feh
@@ -119,9 +118,7 @@
     haskellPackages.xmobar
     imagemagick
     libreoffice
-    lolcat
     patchelf
-    ponyc
     proxychains
     ruby
     rustup
