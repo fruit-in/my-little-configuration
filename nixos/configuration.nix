@@ -144,7 +144,6 @@
         ctrlp-vim
         indentLine
         nerdtree
-        pony-vim-syntax
         rust-vim
         syntastic
         tagbar
