@@ -116,7 +116,6 @@
     gnumake
     haskellPackages.ghc
     haskellPackages.xmobar
-    imagemagick
     libreoffice
     patchelf
     proxychains
