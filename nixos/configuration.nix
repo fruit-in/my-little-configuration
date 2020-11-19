@@ -106,6 +106,7 @@
     binutils
     ctags
     dmenu
+    exercism
     fcitx-configtool
     feh
     file
@@ -115,6 +116,7 @@
     git
     gnumake
     haskellPackages.ghc
+    haskellPackages.stack
     haskellPackages.xmobar
     libreoffice
     patchelf
