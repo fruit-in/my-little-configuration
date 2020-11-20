@@ -149,6 +149,7 @@
         rust-vim
         syntastic
         tagbar
+        vader-vim
         vim-airline
         vim-airline-themes
         vim-devicons
