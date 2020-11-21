@@ -338,7 +338,7 @@
         myClickJustFocuses   = False
         myBorderWidth        = 1
         myModMask            = mod4Mask
-        myWorkspaces         = ["1-Gen","2-Ter","3-Web","4-Cod","5-Vir","6-Oth","7-Bac"]
+        myWorkspaces         = ["1-Gen","2-Ter","3-Web","4-Cod","5-Oth","6-Bac"]
         myNormalBorderColor  = "black"
         myFocusedBorderColor = "black"
 
@@ -527,12 +527,11 @@
     isNormalUser = true;
     home = "/home/indium";
     description = "in";
-    extraGroups = [ "adbusers" "wheel" "vboxusers" ];
+    extraGroups = [ "adbusers" "docker" "wheel" ];
   }; # }}}
 
-  virtualisation.virtualbox.host = { # {{{
-    addNetworkInterface = false;
+  virtualisation.docker = { # {{{
     enable = true;
-    enableExtensionPack = true;
+    extraOptions = "--registry-mirror=https://registry.docker-cn.com";
   }; # }}}
 }
