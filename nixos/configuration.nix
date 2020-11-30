@@ -137,6 +137,7 @@
       jupyter
       matplotlib
       ptpython
+      pytest
       tqdm
     ])) # }}}
     ((vim_configurable.override { python = python3; }).customize { # {{{
@@ -242,6 +243,7 @@
         set cursorline
 
         autocmd Filetype html setlocal sw=2 ts=2
+        autocmd Filetype javascript setlocal sw=2 ts=2
       ''; # }}}
     }) # }}}
   ]; # }}}
@@ -285,6 +287,8 @@
   programs.adb.enable = true;
 
   programs.java.enable = true;
+
+  programs.npm.enable = true;
 
   programs.zsh = { # {{{
     enable = true;
