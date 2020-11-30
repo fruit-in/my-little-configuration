@@ -124,7 +124,6 @@
     ruby
     rustup
     scrot
-    shadowsocks-libev
     termite
     tpacpi-bat
     typora
@@ -313,6 +312,10 @@
       START_CHARGE_THRESH_BAT1 = 100;
       STOP_CHARGE_THRESH_BAT1 = 100;
     };
+  }; # }}}
+
+  services.v2ray = { # {{{
+    enable = true;
   }; # }}}
 
   services.xserver = { # {{{
