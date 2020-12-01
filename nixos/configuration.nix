@@ -127,6 +127,7 @@
     termite
     tpacpi-bat
     typora
+    unrar
     usbutils
     usermount
     wget
