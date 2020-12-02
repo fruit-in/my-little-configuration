@@ -162,9 +162,6 @@
         YouCompleteMe
       ]; # }}}
       vimrcConfig.customRC = '' " {{{
-        " indentLine settings
-        " let g:indentLine_char = '¦'
-
         " vim-airline & vim-airline-theme settings
         let g:airline_theme = 'minimalist'
         let g:airline#extensions#tabline#enabled = 1
@@ -197,7 +194,7 @@
         let g:autoformat_autoindent = 0
         let g:formatdef_brittany = '"brittany"'
         let g:formatters_haskell = ['brittany']
-        au BufWrite * :Autoformat
+        autocmd BufWrite * :Autoformat
 
         " nerdtree settings
         let g:NERDTreeWinSize = 30
@@ -235,11 +232,11 @@
         syntax on
         set encoding=UTF-8
         set ruler
-        set nu
+        set number
         set backspace=2
-        set ts=4
-        set sw=4
-        set et
+        set tabstop=4
+        set shiftwidth=4
+        set expandtab
         set foldenable
         set foldmethod=marker
         set showcmd
@@ -248,7 +245,7 @@
         set mouse=a
         set cursorline
 
-        autocmd Filetype haskell,html,javascript setlocal sw=2 ts=2
+        autocmd Filetype haskell,html,javascript,vim setlocal shiftwidth=2 tabstop=2
       ''; # }}}
     }) # }}}
   ]; # }}}
@@ -281,6 +278,18 @@
   location.provider = "geoclue2";
 
   networking = { # {{{
+    extraHosts = ''
+      151.101.184.133 raw.githubusercontent.com
+      151.101.184.133 avatars0.githubusercontent.com
+      151.101.184.133 avatars1.githubusercontent.com
+      151.101.184.133 avatars2.githubusercontent.com
+      151.101.184.133 avatars3.githubusercontent.com
+      151.101.184.133 avatars4.githubusercontent.com
+      151.101.184.133 avatars5.githubusercontent.com
+      151.101.184.133 avatars6.githubusercontent.com
+      151.101.184.133 avatars7.githubusercontent.com
+      151.101.184.133 avatars8.githubusercontent.com
+    '';
     hostName = "in";
     networkmanager.enable = true;
   }; # }}}
