@@ -100,7 +100,7 @@
   }; # }}}
 
   environment.systemPackages = with pkgs; [ # {{{
-    androidStudioPackages.beta
+    android-studio
     binutils
     ctags
     dmenu
