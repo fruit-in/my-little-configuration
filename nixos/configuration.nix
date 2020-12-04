@@ -147,6 +147,7 @@
       vimrcConfig.plug.plugins = with pkgs.vimPlugins; [ # {{{
         auto-pairs
         ctrlp-vim
+        haskell-vim
         indentLine
         nerdtree
         rust-vim
