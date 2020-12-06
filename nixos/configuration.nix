@@ -13,6 +13,15 @@
   }; # }}}
 
   environment.etc = { # {{{
+    "firefox/policies/policies.json" = { # {{{
+      text = ''
+        {
+          "policies": {
+            "DisableSetDesktopBackground": true
+          }
+        }
+      '';
+    }; # }}}
     "proxychains.conf" = { # {{{
       text = ''
         strict_chain
