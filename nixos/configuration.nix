@@ -129,6 +129,7 @@
     libreoffice
     nodePackages.js-beautify
     patchelf
+    ponysay
     proxychains
     rubocop
     ruby
