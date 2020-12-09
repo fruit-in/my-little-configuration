@@ -113,6 +113,9 @@
     binutils
     ctags
     dmenu
+    elmPackages.elm
+    elmPackages.elm-format
+    elmPackages.elm-test
     exercism
     fcitx-configtool
     feh
@@ -127,6 +130,7 @@
     haskellPackages.stack
     haskellPackages.xmobar
     libreoffice
+    nodePackages.elm-oracle
     nodePackages.js-beautify
     patchelf
     proxychains
@@ -156,6 +160,7 @@
       vimrcConfig.plug.plugins = with pkgs.vimPlugins; [ # {{{
         auto-pairs
         ctrlp-vim
+        elm-vim
         haskell-vim
         indentLine
         nerdtree
@@ -205,6 +210,9 @@
         let g:formatdef_brittany = '"brittany"'
         let g:formatters_haskell = ['brittany']
         autocmd BufWrite * :Autoformat
+
+        " elm-vim settings
+        let g:elm_setup_keybindings = 0
 
         " nerdtree settings
         let g:NERDTreeWinSize = 30
