@@ -632,6 +632,5 @@
 
   virtualisation.docker = { # {{{
     enable = true;
-    extraOptions = "--registry-mirror=https://registry.docker-cn.com";
   }; # }}}
 }
