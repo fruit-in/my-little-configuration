@@ -174,6 +174,7 @@
         vim-devicons
         vim-fugitive
         vim-nix
+        vim-nong-theme
         YouCompleteMe
       ]; # }}}
       vimrcConfig.customRC = '' " {{{
