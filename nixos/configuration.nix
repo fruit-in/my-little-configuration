@@ -175,6 +175,7 @@
         vim-fugitive
         vim-nix
         vim-nong-theme
+        vim-wakatime
         YouCompleteMe
       ]; # }}}
       vimrcConfig.customRC = '' " {{{
