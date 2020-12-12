@@ -138,7 +138,6 @@
     ruby
     rustup
     scrot
-    swiProlog
     termite
     tpacpi-bat
     typora
