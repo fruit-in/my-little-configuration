@@ -130,8 +130,6 @@
     haskellPackages.stack
     haskellPackages.xmobar
     libreoffice
-    nodePackages.elm-oracle
-    nodePackages.js-beautify
     patchelf
     proxychains
     rubocop
