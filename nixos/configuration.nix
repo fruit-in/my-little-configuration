@@ -323,11 +323,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  programs.adb.enable = true;
-
   programs.java.enable = true;
-
-  programs.npm.enable = true;
 
   programs.zsh = { # {{{
     enable = true;
