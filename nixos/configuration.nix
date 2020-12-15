@@ -116,7 +116,6 @@
     exercism
     fcitx-configtool
     feh
-    file
     firefox-esr
     gcc
     gimp
@@ -136,7 +135,6 @@
     termite
     tpacpi-bat
     typora
-    unrar
     usbutils
     usermount
     wget
@@ -295,6 +293,7 @@
       151.101.184.133 cloud.githubusercontent.com
       151.101.184.133 camo.githubusercontent.com
       151.101.184.133 raw.githubusercontent.com
+      151.101.184.133 user-images.githubusercontent.com
       151.101.184.133 avatars0.githubusercontent.com
       151.101.184.133 avatars1.githubusercontent.com
       151.101.184.133 avatars2.githubusercontent.com
