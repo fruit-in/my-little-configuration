@@ -139,7 +139,6 @@
     usermount
     wget
     wmname
-    xosd
     (python3.withPackages (ps: with ps; [ # {{{
       autopep8
       jupyter
@@ -325,8 +324,6 @@
       theme = "lambda";
     };
   }; # }}}
-
-  services.cron.enable = true;
 
   services.illum.enable = true;
 
