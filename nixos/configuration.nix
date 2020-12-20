@@ -141,11 +141,8 @@
     wmname
     (python3.withPackages (ps: with ps; [ # {{{
       autopep8
-      jupyter
-      matplotlib
       ptpython
       pytest
-      tqdm
     ])) # }}}
     ((vim_configurable.override { python = python3; }).customize { # {{{
       name = "vim";
