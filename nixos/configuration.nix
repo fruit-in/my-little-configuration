@@ -109,7 +109,6 @@
   }; # }}}
 
   environment.systemPackages = with pkgs; [ # {{{
-    android-studio
     binutils
     ctags
     dmenu
@@ -120,7 +119,6 @@
     gcc
     gimp
     git
-    gnumake
     haskellPackages.brittany
     haskellPackages.ghc
     haskellPackages.stack
