@@ -112,7 +112,6 @@
     binutils
     ctags
     dmenu
-    elixir
     exercism
     fcitx-configtool
     feh
@@ -158,7 +157,6 @@
         vim-airline-themes
         vim-autoformat
         vim-devicons
-        vim-elixir
         vim-fugitive
         vim-nix
         vim-nong-theme
