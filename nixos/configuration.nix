@@ -343,6 +343,7 @@
     displayManager.sessionCommands = '' # {{{
       ${pkgs.usermount}/bin/usermount &
       ${pkgs.wmname}/bin/wmname LG3D &
+      ${pkgs.xorg.xinput}/bin/xinput disable 'SynPS/2 Synaptics TouchPad'
     ''; # }}}
     displayManager.gdm.enable = true;
     windowManager.xmonad = {
