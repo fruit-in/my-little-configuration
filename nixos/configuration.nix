@@ -110,6 +110,7 @@
 
   environment.systemPackages = with pkgs; [ # {{{
     binutils
+    bitwig-studio
     ctags
     dmenu
     exercism
@@ -273,6 +274,7 @@
 
   hardware.pulseaudio = { # {{{
     enable = true;
+    package = pkgs.pulseaudioFull;
     support32Bit = true;
   }; # }}}
 
@@ -321,6 +323,12 @@
   }; # }}}
 
   services.illum.enable = true;
+
+  services.jack = { # {{{
+    alsa.enable = false;
+    jackd.enable = true;
+    loopback.enable = true;
+  }; # }}}
 
   services.logind.lidSwitch = "lock";
 
@@ -607,7 +615,7 @@
     isNormalUser = true;
     home = "/home/indium";
     description = "in";
-    extraGroups = [ "adbusers" "docker" "wheel" ];
+    extraGroups = [ "adbusers" "docker" "jackaudio" "wheel" ];
   }; # }}}
 
   virtualisation.docker = { # {{{
