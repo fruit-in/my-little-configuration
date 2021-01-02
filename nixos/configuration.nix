@@ -126,7 +126,6 @@
     haskellPackages.xmobar
     libreoffice
     patchelf
-    ponyc
     proxychains
     rubocop
     ruby
@@ -162,7 +161,6 @@
         vim-fugitive
         vim-nix
         vim-nong-theme
-        vim-pony
         YouCompleteMe
       ]; # }}}
       vimrcConfig.customRC = '' " {{{
