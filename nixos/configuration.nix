@@ -112,7 +112,6 @@
     binutils
     bitwig-studio
     ctags
-    dash
     dmenu
     exercism
     fcitx-configtool
@@ -126,7 +125,6 @@
     haskellPackages.stack
     haskellPackages.xmobar
     libreoffice
-    lolcat
     patchelf
     proxychains
     rubocop
