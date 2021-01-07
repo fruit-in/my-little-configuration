@@ -126,6 +126,7 @@
     haskellPackages.xmobar
     libreoffice
     patchelf
+    peek
     proxychains
     rubocop
     ruby
