@@ -101,7 +101,7 @@
               "--normal",   "#d78700",
               "--high",     "#005fd7"
             ] 10,
-            Run Date "<fc=#ff0000>%b %d %H:%M:%S</fc>" "date" 10
+            Run Date "<fc=#ff0000>%a %b %d %H:%M:%S</fc>" "date" 10
           ]
         }
       '';
