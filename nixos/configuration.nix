@@ -612,10 +612,10 @@
   users.defaultUserShell = pkgs.zsh;
 
   users.users.indium = { # {{{
-    isNormalUser = true;
-    home = "/home/indium";
     description = "in";
     extraGroups = [ "adbusers" "docker" "jackaudio" "wheel" ];
+    home = "/home/indium";
+    isNormalUser = true;
   }; # }}}
 
   virtualisation.docker = { # {{{
