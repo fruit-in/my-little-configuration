@@ -311,6 +311,10 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  nixpkgs.config.packageOverrides = super: { # {{{
+    proxychains = pkgs.callPackage ./proxychains.nix {};
+  }; # }}}
+
   programs.java.enable = true;
 
   programs.zsh = { # {{{
