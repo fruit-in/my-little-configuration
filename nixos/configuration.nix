@@ -22,20 +22,6 @@
         }
       '';
     }; # }}}
-    "proxychains.conf" = { # {{{
-      text = ''
-        strict_chain
-        proxy_dns
-        remote_dns_subnet 224
-        tcp_read_time_out 15000
-        tcp_connect_time_out 8000
-        localnet 127.0.0.0/255.0.0.0
-        quiet_mode
-
-        [ProxyList]
-        socks5 127.0.0.1 1080
-      '';
-    }; # }}}
     termiterc = { # {{{
       text = ''
         [options]
@@ -126,7 +112,6 @@
     haskellPackages.xmobar
     libreoffice
     patchelf
-    proxychains
     rubocop
     ruby
     rustup
@@ -255,6 +240,7 @@
 
   environment.variables = { # {{{
     EDITOR = "vim";
+    PROXYCHAINS_CONF_FILE = "/etc/proxychains.conf";
   }; # }}}
 
   fonts = { # {{{
@@ -311,11 +297,18 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  nixpkgs.config.packageOverrides = super: { # {{{
-    proxychains = pkgs.callPackage ./proxychains.nix {};
-  }; # }}}
-
   programs.java.enable = true;
+
+  programs.proxychains = { # {{{
+    enable = true;
+    proxies.unnamed = {
+      enable = true;
+      host = "127.0.0.1";
+      port = 1080;
+      type = "socks5";
+    };
+    quietMode = true;
+  }; # }}}
 
   programs.zsh = { # {{{
     enable = true;
