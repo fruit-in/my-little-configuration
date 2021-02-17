@@ -13,85 +13,79 @@
   }; # }}}
 
   environment.etc = { # {{{
-    "firefox/policies/policies.json" = { # {{{
-      text = ''
-        {
-          "policies": {
-            "DisableSetDesktopBackground": true
-          }
+    "firefox/policies/policies.json".text = ''
+      {
+        "policies": {
+          "DisableSetDesktopBackground": true
         }
-      '';
-    }; # }}}
-    termiterc = { # {{{
-      text = ''
-        [options]
-        #font = DejaVu Sans Mono 10
-        font = DejaVuSansMono Nerd Font 10
-        [colors]
-        foreground = #00ab72
-        foreground_bold = #812990
-        cursor = #e4e4e4
-        cursor_foreground = #303030
-        background = #292929
-      '';
-    }; # }}}
-    xmobarrc = { # {{{
-      text = ''
-        Config {
-          font         = "xft:DejaVuSansMono Nerd Font-11,WenQuanYi Micro Hei-11",
-          bgColor      = "#000000",
-          fgColor      = "#d0d0d0",
-          border       = BottomB,
-          position     = Top,
-          lowerOnStart = False,
-          allDesktops  = True,
-          persistent   = True,
-          sepChar      = "%",
-          alignSep     = "}{",
-          template     = " <fc=#ffffff>%StdinReader%</fc>}{ %battery% | %cpu% | %memory% | %dynnetwork% | %date% ",
-          commands = [
-            Run StdinReader,
-            Run Battery [
-              "--template", "<acstatus>",
-              "--Low",      "15",
-              "--High",     "80",
-              "--low",      "#d70000",
-              "--normal",   "#d78700",
-              "--high",     "#005fd7",
-              "--",
-              "-o",         "<fc=#ffd700></fc> <left>% <fc=#ffd700><timeleft></fc>",
-              "-O",         "<fc=#ffd700> <timeleft></fc>",
-              "-i",         "<fc=#ffd700></fc>"
-            ] 50,
-            Run Cpu [
-              "--template", "<fc=#ff8787></fc> <total>%",
-              "--Low",      "40",
-              "--High",     "85",
-              "--low",      "#005fd7",
-              "--normal",   "#d78700",
-              "--high",     "#d70000"
-            ] 10,
-            Run Memory [
-              "--template", "<fc=#5f875f></fc> <usedratio>%",
-              "--Low",      "30",
-              "--High",     "85",
-              "--low",      "#005fd7",
-              "--normal",   "#d78700",
-              "--high",     "#d70000"
-            ] 10,
-            Run DynNetwork [
-              "--template", "<fc=#00afff>龍</fc> <rx>kB/s",
-              "--Low",      "204800",
-              "--High",     "2097152",
-              "--low",      "#d70000",
-              "--normal",   "#d78700",
-              "--high",     "#005fd7"
-            ] 10,
-            Run Date "<fc=#ff0000>%a %b %d %H:%M:%S</fc>" "date" 10
-          ]
-        }
-      '';
-    }; # }}}
+      }
+    '';
+    termiterc.text = ''
+      [options]
+      # font = DejaVu Sans Mono 10
+      font = DejaVuSansMono Nerd Font 10
+      [colors]
+      foreground = #00ab72
+      foreground_bold = #812990
+      cursor = #e4e4e4
+      cursor_foreground = #303030
+      background = #292929
+    '';
+    xmobarrc.text = ''
+      Config {
+        font         = "xft:DejaVuSansMono Nerd Font-11,WenQuanYi Micro Hei-11",
+        bgColor      = "#000000",
+        fgColor      = "#d0d0d0",
+        border       = BottomB,
+        position     = Top,
+        lowerOnStart = False,
+        allDesktops  = True,
+        persistent   = True,
+        sepChar      = "%",
+        alignSep     = "}{",
+        template     = " <fc=#ffffff>%StdinReader%</fc>}{ %battery% | %cpu% | %memory% | %dynnetwork% | %date% ",
+        commands = [
+          Run StdinReader,
+          Run Battery [
+            "--template", "<acstatus>",
+            "--Low",      "15",
+            "--High",     "80",
+            "--low",      "#d70000",
+            "--normal",   "#d78700",
+            "--high",     "#005fd7",
+            "--",
+            "-o",         "<fc=#ffd700></fc> <left>% <fc=#ffd700><timeleft></fc>",
+            "-O",         "<fc=#ffd700> <timeleft></fc>",
+            "-i",         "<fc=#ffd700></fc>"
+          ] 50,
+          Run Cpu [
+            "--template", "<fc=#ff8787></fc> <total>%",
+            "--Low",      "40",
+            "--High",     "85",
+            "--low",      "#005fd7",
+            "--normal",   "#d78700",
+            "--high",     "#d70000"
+          ] 10,
+          Run Memory [
+            "--template", "<fc=#5f875f></fc> <usedratio>%",
+            "--Low",      "30",
+            "--High",     "85",
+            "--low",      "#005fd7",
+            "--normal",   "#d78700",
+            "--high",     "#d70000"
+          ] 10,
+          Run DynNetwork [
+            "--template", "<fc=#00afff>龍</fc> <rx>kB/s",
+            "--Low",      "204800",
+            "--High",     "2097152",
+            "--low",      "#d70000",
+            "--normal",   "#d78700",
+            "--high",     "#005fd7"
+          ] 10,
+          Run Date "<fc=#ff0000>%a %b %d %H:%M:%S</fc>" "date" 10
+        ]
+      }
+    '';
   }; # }}}
 
   environment.systemPackages = with pkgs; [ # {{{
