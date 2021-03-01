@@ -242,6 +242,8 @@
     fonts = with pkgs; [ wqy_microhei ];
   }; # }}}
 
+  hardware.bluetooth.enable = true;
+
   hardware.opengl.driSupport32Bit = true;
 
   hardware.trackpoint = { # {{{
