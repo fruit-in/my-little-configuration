@@ -100,6 +100,7 @@
     gcc
     gimp
     git
+    gnome3.nautilus
     haskellPackages.brittany
     haskellPackages.ghc
     haskellPackages.stack
@@ -314,6 +315,8 @@
       theme = "lambda";
     };
   }; # }}}
+
+  services.gvfs.enable = true;
 
   services.illum.enable = true;
 
