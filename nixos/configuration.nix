@@ -609,12 +609,18 @@
 
   users.users.indium = { # {{{
     description = "in";
-    extraGroups = [ "adbusers" "docker" "jackaudio" "wheel" ];
+    extraGroups = [ "adbusers" "docker" "jackaudio" "wheel" "vboxusers" ];
     home = "/home/indium";
     isNormalUser = true;
   }; # }}}
 
   virtualisation.docker = { # {{{
     enable = true;
+  }; # }}}
+
+  virtualisation.virtualbox.host = { # {{{
+    addNetworkInterface = false;
+    enable = true;
+    enableExtensionPack = true;
   }; # }}}
 }
