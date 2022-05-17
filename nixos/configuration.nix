@@ -112,7 +112,6 @@
     scrot
     termite
     tpacpi-bat
-    typora
     unzip
     usbutils
     usermount
@@ -347,7 +346,7 @@
       ${pkgs.wmname}/bin/wmname LG3D &
       ${pkgs.xorg.xinput}/bin/xinput disable 'SynPS/2 Synaptics TouchPad'
     ''; # }}}
-    displayManager.gdm.enable = true;
+    displayManager.lightdm.enable = true;
     windowManager.xmonad = {
       enable = true;
       enableContribAndExtras = true;
