@@ -123,8 +123,7 @@
       ptpython
       pytest
     ])) # }}}
-    ((vim_configurable.override { python = python3; }).customize { # {{{
-      name = "vim";
+    (vim_configurable.customize { # {{{
       vimrcConfig.plug.plugins = with pkgs.vimPlugins; [ # {{{
         auto-pairs
         ctrlp-vim
