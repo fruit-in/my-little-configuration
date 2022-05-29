@@ -115,7 +115,6 @@
     unzip
     usbutils
     usermount
-    wget
     wmname
     (python3.withPackages (ps: with ps; [ # {{{
       autopep8
@@ -123,6 +122,7 @@
       pytest
     ])) # }}}
     (vim_configurable.customize { # {{{
+      name = "vim";
       vimrcConfig.plug.plugins = with pkgs.vimPlugins; [ # {{{
         auto-pairs
         ctrlp-vim
@@ -280,6 +280,7 @@
       151.101.184.133 avatars7.githubusercontent.com
       151.101.184.133 avatars8.githubusercontent.com
     '';
+    firewall.allowedTCPPorts = [ 20427 ];
     hostName = "in";
     networkmanager.enable = true;
   }; # }}}
