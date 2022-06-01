@@ -89,6 +89,7 @@
   }; # }}}
 
   environment.systemPackages = with pkgs; [ # {{{
+    axel
     binutils
     ctags
     dmenu
