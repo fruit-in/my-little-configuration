@@ -123,7 +123,6 @@
       pytest
     ])) # }}}
     (vim_configurable.customize { # {{{
-      name = "vim";
       vimrcConfig.plug.plugins = with pkgs.vimPlugins; [ # {{{
         auto-pairs
         ctrlp-vim
