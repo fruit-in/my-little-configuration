@@ -117,6 +117,13 @@
     usbutils
     usermount
     wmname
+    (bitwig-studio.overrideAttrs (oldAttrs: { # {{{
+      src = fetchurl {
+        # url = "https://downloads.bitwig.com/stable/4.1.6/bitwig-studio-4.1.6.deb";
+        url = "http://47.95.143.39/4.1.6/bitwig-studio-4.1.6.deb";
+        sha256 = "sha256-Q4YYdMUd/T8tGGcakhoLdHvWsHwOq7LgIb77sr2OWuQ=";
+      };
+    })) # }}}
     (python3.withPackages (ps: with ps; [ # {{{
       autopep8
       ptpython
@@ -251,11 +258,11 @@
     speed = 180;
   }; # }}}
 
-  hardware.pulseaudio = { # {{{
-    enable = true;
-    package = pkgs.pulseaudioFull;
-    support32Bit = true;
-  }; # }}}
+  # hardware.pulseaudio = { # {{{
+  #   enable = true;
+  #   package = pkgs.pulseaudioFull;
+  #   support32Bit = true;
+  # }; # }}}
 
   i18n.inputMethod.enabled = "fcitx";
 
@@ -318,13 +325,20 @@
 
   services.illum.enable = true;
 
-  services.jack = { # {{{
-    alsa.enable = false;
-    jackd.enable = true;
-    loopback.enable = true;
-  }; # }}}
+  # services.jack = { # {{{
+  #   alsa.enable = false;
+  #   jackd.enable = true;
+  #   loopback.enable = true;
+  # }; # }}}
 
   services.logind.lidSwitch = "lock";
+
+  services.pipewire = { # {{{
+    enable = true;
+    alsa.enable = true;
+    jack.enable = true;
+    pulse.enable = true;
+  }; # }}}
 
   services.redshift.enable = true;
 
@@ -607,7 +621,7 @@
 
   users.users.indium = { # {{{
     description = "in";
-    extraGroups = [ "adbusers" "jackaudio" "wheel" "vboxusers" ];
+    extraGroups = [ "adbusers" "wheel" "vboxusers" ];
     home = "/home/indium";
     isNormalUser = true;
   }; # }}}
