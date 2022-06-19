@@ -258,12 +258,6 @@
     speed = 180;
   }; # }}}
 
-  # hardware.pulseaudio = { # {{{
-  #   enable = true;
-  #   package = pkgs.pulseaudioFull;
-  #   support32Bit = true;
-  # }; # }}}
-
   i18n.inputMethod.enabled = "fcitx";
 
   location.provider = "geoclue2";
@@ -324,12 +318,6 @@
   services.gvfs.enable = true;
 
   services.illum.enable = true;
-
-  # services.jack = { # {{{
-  #   alsa.enable = false;
-  #   jackd.enable = true;
-  #   loopback.enable = true;
-  # }; # }}}
 
   services.logind.lidSwitch = "lock";
 
