@@ -93,7 +93,6 @@
     binutils
     ctags
     dmenu
-    exercism
     fcitx-configtool
     feh
     firefox-esr
@@ -107,8 +106,6 @@
     haskellPackages.xmobar
     libreoffice
     patchelf
-    rubocop
-    ruby
     rustup
     scrot
     termite
