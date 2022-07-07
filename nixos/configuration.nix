@@ -106,6 +106,7 @@
     haskellPackages.xmobar
     libreoffice
     patchelf
+    pavucontrol
     rustup
     scrot
     termite
@@ -116,9 +117,8 @@
     wmname
     (bitwig-studio.overrideAttrs (oldAttrs: { # {{{
       src = fetchurl {
-        # url = "https://downloads.bitwig.com/stable/4.1.6/bitwig-studio-4.1.6.deb";
-        url = "http://47.95.143.39/4.1.6/bitwig-studio-4.1.6.deb";
-        sha256 = "sha256-Q4YYdMUd/T8tGGcakhoLdHvWsHwOq7LgIb77sr2OWuQ=";
+        url = "http://47.95.143.39/4.3/bitwig-studio-4.3.deb";
+        sha256 = "sha256-aJpsYzD1o9TFF0Vhr8VOGuDHdurZhfdogLnB7Xt++hI=";
       };
     })) # }}}
     (python3.withPackages (ps: with ps; [ # {{{
