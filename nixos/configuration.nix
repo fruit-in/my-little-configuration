@@ -92,6 +92,7 @@
     axel
     binutils
     ctags
+    distrho
     dmenu
     fcitx-configtool
     feh
@@ -99,7 +100,6 @@
     gcc
     gimp
     git
-    gnome3.nautilus
     haskellPackages.brittany
     haskellPackages.ghc
     haskellPackages.stack
@@ -339,6 +339,7 @@
 
   services.xserver = { # {{{
     enable = true;
+    desktopManager.xfce.enable = true;
     displayManager.sessionCommands = '' # {{{
       ${pkgs.usermount}/bin/usermount &
       ${pkgs.wmname}/bin/wmname LG3D &
