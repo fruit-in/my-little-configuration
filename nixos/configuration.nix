@@ -13,13 +13,6 @@
   }; # }}}
 
   environment.etc = { # {{{
-    "firefox/policies/policies.json".text = ''
-      {
-        "policies": {
-          "DisableSetDesktopBackground": true
-        }
-      }
-    '';
     termiterc.text = ''
       [options]
       # font = DejaVu Sans Mono 10
@@ -106,7 +99,6 @@
     haskellPackages.xmobar
     libreoffice
     patchelf
-    pavucontrol
     rustup
     scrot
     termite
@@ -114,7 +106,6 @@
     unzip
     usbutils
     usermount
-    wmname
     (bitwig-studio.overrideAttrs (oldAttrs: { # {{{
       src = fetchurl {
         url = "http://47.95.143.39/4.3/bitwig-studio-4.3.deb";
@@ -288,8 +279,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  programs.java.enable = true;
-
   programs.proxychains = { # {{{
     enable = true;
     proxies.unnamed = {
@@ -309,8 +298,6 @@
       theme = "lambda";
     };
   }; # }}}
-
-  services.gvfs.enable = true;
 
   services.illum.enable = true;
 
@@ -342,7 +329,6 @@
     desktopManager.xfce.enable = true;
     displayManager.sessionCommands = '' # {{{
       ${pkgs.usermount}/bin/usermount &
-      ${pkgs.wmname}/bin/wmname LG3D &
       ${pkgs.xorg.xinput}/bin/xinput disable 'SynPS/2 Synaptics TouchPad'
     ''; # }}}
     displayManager.lightdm.enable = true;
@@ -605,7 +591,7 @@
 
   users.users.indium = { # {{{
     description = "in";
-    extraGroups = [ "adbusers" "wheel" "vboxusers" ];
+    extraGroups = [ "wheel" "vboxusers" ];
     home = "/home/indium";
     isNormalUser = true;
   }; # }}}
