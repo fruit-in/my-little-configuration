@@ -99,6 +99,7 @@
     haskellPackages.xmobar
     libreoffice
     patchelf
+    qpwgraph
     rustup
     scrot
     termite
@@ -106,10 +107,14 @@
     unzip
     usbutils
     usermount
+    wine-staging
+    yabridge
+    yabridgectl
     (bitwig-studio.overrideAttrs (oldAttrs: { # {{{
+      version = "4.3.2";
       src = fetchurl {
-        url = "http://47.95.143.39/4.3/bitwig-studio-4.3.deb";
-        sha256 = "sha256-aJpsYzD1o9TFF0Vhr8VOGuDHdurZhfdogLnB7Xt++hI=";
+        url = "http://47.95.143.39/4.3.2/bitwig-studio-4.3.2.deb";
+        sha256 = "sha256-vR5C7imMA5oJ5F3Q/tmVNN/FLhFjegFjls9HR4CYoVk=";
       };
     })) # }}}
     (python3.withPackages (ps: with ps; [ # {{{
