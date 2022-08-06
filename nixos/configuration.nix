@@ -107,7 +107,7 @@
     unzip
     usbutils
     usermount
-    wine-staging
+    wine
     yabridge
     yabridgectl
     (bitwig-studio.overrideAttrs (oldAttrs: { # {{{
