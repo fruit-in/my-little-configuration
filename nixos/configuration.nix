@@ -304,6 +304,8 @@
     };
   }; # }}}
 
+  security.pam.loginLimits = [ { domain = "@audio"; item = "memlock"; type = "-"; value = "unlimited"; } ];
+
   services.illum.enable = true;
 
   services.logind.lidSwitch = "lock";
@@ -596,7 +598,7 @@
 
   users.users.indium = { # {{{
     description = "in";
-    extraGroups = [ "wheel" "vboxusers" ];
+    extraGroups = [ "audio" "wheel" "vboxusers" ];
     home = "/home/indium";
     isNormalUser = true;
   }; # }}}
