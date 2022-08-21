@@ -108,6 +108,7 @@
     usbutils
     usermount
     wine
+    wine64
     yabridge
     yabridgectl
     (bitwig-studio.overrideAttrs (oldAttrs: { # {{{
