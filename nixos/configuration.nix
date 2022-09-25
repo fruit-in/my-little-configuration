@@ -102,6 +102,7 @@
     qpwgraph
     rustup
     scrot
+    shadowsocks-libev
     termite
     tpacpi-bat
     unzip
@@ -334,7 +335,6 @@
 
   services.xserver = { # {{{
     enable = true;
-    desktopManager.xfce.enable = true;
     displayManager.sessionCommands = '' # {{{
       ${pkgs.usermount}/bin/usermount &
       ${pkgs.xorg.xinput}/bin/xinput disable 'SynPS/2 Synaptics TouchPad'
