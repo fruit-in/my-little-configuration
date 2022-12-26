@@ -9,13 +9,24 @@
 
   boot.loader = { # {{{
     efi.canTouchEfiVariables = true;
-    systemd-boot.enable = true;
+    # systemd-boot.enable = true;
+    efi.efiSysMountPoint = "/boot/efi";
+    grub = {
+      enable = true;
+      device = "nodev";
+      efiSupport = true;
+      extraEntries = ''
+        menuentry "Windows" {
+          search --file --no-floppy --set=root /EFI/Microsoft/Boot/bootmgfw.efi
+          chainloader (''${root})/EFI/Microsoft/Boot/bootmgfw.efi
+        }
+      '';
+    };
   }; # }}}
 
   environment.etc = { # {{{
     termiterc.text = ''
       [options]
-      # font = DejaVu Sans Mono 10
       font = DejaVuSansMono Nerd Font 10
       [colors]
       foreground = #00ab72
@@ -26,11 +37,11 @@
     '';
     xmobarrc.text = ''
       Config {
-        font         = "xft:DejaVuSansMono Nerd Font-11,WenQuanYi Micro Hei-11",
+        font         = "xft:WenQuanYi Micro Hei-11,DejaVuSansMono Nerd Font-11",
         bgColor      = "#000000",
         fgColor      = "#d0d0d0",
         border       = BottomB,
-        position     = Top,
+        position     = TopH 21,
         lowerOnStart = False,
         allDesktops  = True,
         persistent   = True,
@@ -85,7 +96,6 @@
     axel
     binutils
     ctags
-    distrho
     dmenu
     fcitx-configtool
     feh
@@ -98,6 +108,8 @@
     haskellPackages.stack
     haskellPackages.xmobar
     libreoffice
+    marktext
+    ntfs3g
     patchelf
     qpwgraph
     rustup
@@ -108,17 +120,6 @@
     unzip
     usbutils
     usermount
-    wine
-    wine64
-    yabridge
-    yabridgectl
-    (bitwig-studio.overrideAttrs (oldAttrs: { # {{{
-      version = "4.3.2";
-      src = fetchurl {
-        url = "http://47.95.143.39/4.3.2/bitwig-studio-4.3.2.deb";
-        sha256 = "sha256-vR5C7imMA5oJ5F3Q/tmVNN/FLhFjegFjls9HR4CYoVk=";
-      };
-    })) # }}}
     (python3.withPackages (ps: with ps; [ # {{{
       autopep8
       ptpython
@@ -239,7 +240,10 @@
 
   fonts = { # {{{
     fontDir.enable = true;
-    fonts = with pkgs; [ wqy_microhei ];
+    fonts = with pkgs; [
+      (nerdfonts.override { fonts = [ "DejaVuSansMono" ]; })
+      wqy_microhei
+    ];
   }; # }}}
 
   hardware.bluetooth.enable = true;
@@ -305,8 +309,6 @@
       theme = "lambda";
     };
   }; # }}}
-
-  security.pam.loginLimits = [ { domain = "@audio"; item = "memlock"; type = "-"; value = "unlimited"; } ];
 
   services.illum.enable = true;
 
