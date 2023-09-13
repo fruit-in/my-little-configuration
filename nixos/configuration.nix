@@ -27,7 +27,7 @@
   environment.etc = { # {{{
     termiterc.text = ''
       [options]
-      font = DejaVuSansMono Nerd Font 10
+      font = DejaVu Sans Mono 10
       [colors]
       foreground = #00ab72
       foreground_bold = #812990
@@ -37,7 +37,8 @@
     '';
     xmobarrc.text = ''
       Config {
-        font         = "xft:WenQuanYi Micro Hei-11,DejaVuSansMono Nerd Font-11",
+        font         = "DejaVu Sans Mono 11",
+        additionalFonts = [ "WenQuanYi Micro Hei 11" ]
         bgColor      = "#000000",
         fgColor      = "#d0d0d0",
         border       = BottomB,
@@ -58,12 +59,12 @@
             "--normal",   "#d78700",
             "--high",     "#005fd7",
             "--",
-            "-o",         "<fc=#ffd700></fc> <left>% <fc=#ffd700><timeleft></fc>",
-            "-O",         "<fc=#ffd700> <timeleft></fc>",
-            "-i",         "<fc=#ffd700></fc>"
+            "-o",         "<fc=#ffd700>Battery</fc> <left>% <fc=#ffd700><timeleft></fc>",
+            "-O",         "<fc=#ffd700>Charge <timeleft></fc>",
+            "-i",         "<fc=#ffd700></fc>"
           ] 50,
           Run Cpu [
-            "--template", "<fc=#ff8787></fc> <total>%",
+            "--template", "<fc=#ff8787>CPU</fc> <total>%",
             "--Low",      "40",
             "--High",     "85",
             "--low",      "#005fd7",
@@ -71,7 +72,7 @@
             "--high",     "#d70000"
           ] 10,
           Run Memory [
-            "--template", "<fc=#5f875f></fc> <usedratio>%",
+            "--template", "<fc=#5f875f>RAM</fc> <usedratio>%",
             "--Low",      "30",
             "--High",     "85",
             "--low",      "#005fd7",
@@ -79,7 +80,7 @@
             "--high",     "#d70000"
           ] 10,
           Run DynNetwork [
-            "--template", "<fc=#00afff>龍</fc> <rx>kB/s",
+            "--template", "<fc=#00afff>DOWN</fc> <rx>kB/s",
             "--Low",      "204800",
             "--High",     "2097152",
             "--low",      "#d70000",
@@ -108,10 +109,11 @@
     haskellPackages.stack
     haskellPackages.xmobar
     libreoffice
-    marktext
+    mpv
     ntfs3g
     patchelf
     qpwgraph
+    qq
     rustup
     scrot
     shadowsocks-libev
@@ -131,6 +133,7 @@
         ctrlp-vim
         haskell-vim
         indentLine
+        markdown-preview-nvim
         nerdtree
         rust-vim
         syntastic
@@ -178,6 +181,9 @@
         let g:formatdef_brittany = '"brittany"'
         let g:formatters_haskell = ['brittany']
         autocmd BufWrite * :Autoformat
+
+        " markdown-preview-nvim settings
+        nnoremap <leader>mdp :MarkdownPreviewToggle<CR>
 
         " nerdtree settings
         let g:NERDTreeWinSize = 30
@@ -283,7 +289,10 @@
     '';
     firewall.allowedTCPPorts = [ 20427 ];
     hostName = "in";
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      insertNameservers = [ "223.5.5.5" ];
+    };
   }; # }}}
 
   nix.settings.substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
@@ -556,7 +565,7 @@
         -- See the 'XMonad.Hooks.DynamicLog' extension for examples.
         myLogHook h = dynamicLogWithPP $ def
           { ppOutput = hPutStrLn h
-          , ppTitle  = xmobarColor "#00ab72" "" . shorten 50
+          , ppTitle  = xmobarColor "#00ab72" "" . shorten 46
           }
 
         -- Perform an arbitrary action each time xmonad starts or is restarted with mod-q.
@@ -601,14 +610,8 @@
 
   users.users.indium = { # {{{
     description = "in";
-    extraGroups = [ "audio" "wheel" "vboxusers" ];
+    extraGroups = [ "audio" "wheel" ];
     home = "/home/indium";
     isNormalUser = true;
-  }; # }}}
-
-  virtualisation.virtualbox.host = { # {{{
-    addNetworkInterface = false;
-    enable = true;
-    enableExtensionPack = true;
   }; # }}}
 }
