@@ -98,7 +98,6 @@
     binutils
     ctags
     dmenu
-    fcitx-configtool
     feh
     firefox-esr
     gcc
@@ -260,10 +259,13 @@
     enable = true;
     emulateWheel = true;
     sensitivity = 127;
-    speed = 180;
+    speed = 127;
   }; # }}}
 
-  i18n.inputMethod.enabled = "fcitx";
+  i18n.inputMethod = { # {{{
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [ fcitx5-chinese-addons ];
+  }; # }}}
 
   location.provider = "geoclue2";
 
@@ -347,8 +349,8 @@
   services.xserver = { # {{{
     enable = true;
     displayManager.sessionCommands = '' # {{{
-      ${pkgs.usermount}/bin/usermount &
-      ${pkgs.xorg.xinput}/bin/xinput disable 'SynPS/2 Synaptics TouchPad'
+      /run/current-system/sw/bin/fcitx5 --enable chinese-addons -d &
+      /run/current-system/sw/bin/xinput disable 'SynPS/2 Synaptics TouchPad'
     ''; # }}}
     displayManager.lightdm.enable = true;
     windowManager.xmonad = {
