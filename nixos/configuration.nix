@@ -103,9 +103,6 @@
     gcc
     gimp
     git
-    haskellPackages.brittany
-    haskellPackages.ghc
-    haskellPackages.stack
     haskellPackages.xmobar
     libreoffice
     mpv
@@ -120,7 +117,6 @@
     tpacpi-bat
     unzip
     usbutils
-    usermount
     (python3.withPackages (ps: with ps; [ # {{{
       autopep8
       ptpython
@@ -130,7 +126,6 @@
       vimrcConfig.plug.plugins = with pkgs.vimPlugins; [ # {{{
         auto-pairs
         ctrlp-vim
-        haskell-vim
         indentLine
         markdown-preview-nvim
         nerdtree
@@ -177,8 +172,8 @@
 
         " vim-autoformat settings
         let g:autoformat_autoindent = 0
-        let g:formatdef_brittany = '"brittany"'
-        let g:formatters_haskell = ['brittany']
+        " let g:formatdef_brittany = '"brittany"'
+        " let g:formatters_haskell = ['brittany']
         autocmd BufWrite * :Autoformat
 
         " markdown-preview-nvim settings
