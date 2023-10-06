@@ -117,6 +117,7 @@
     tpacpi-bat
     unzip
     usbutils
+    xsel
     (python3.withPackages (ps: with ps; [ # {{{
       autopep8
       ptpython
