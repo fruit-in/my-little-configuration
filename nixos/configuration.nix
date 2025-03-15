@@ -27,7 +27,7 @@
   environment.etc = { # {{{
     termiterc.text = ''
       [options]
-      font = DejaVu Sans Mono 10
+      font = Hack 10
       [colors]
       foreground = #00ab72
       foreground_bold = #812990
@@ -37,7 +37,7 @@
     '';
     xmobarrc.text = ''
       Config {
-        font         = "DejaVu Sans Mono 11",
+        font         = "Hack 11",
         additionalFonts = [ "WenQuanYi Micro Hei 11" ]
         bgColor      = "#000000",
         fgColor      = "#d0d0d0",
@@ -243,7 +243,8 @@
   fonts = { # {{{
     fontDir.enable = true;
     packages = [
-      (pkgs.nerdfonts.override { fonts = [ "DejaVuSansMono" ]; })
+      pkgs.hack-font
+      (pkgs.nerdfonts.override { fonts = [ "Hack" ]; })
       pkgs.wqy_microhei
     ];
   }; # }}}
