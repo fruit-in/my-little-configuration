@@ -94,6 +94,7 @@
   }; # }}}
 
   environment.systemPackages = with pkgs; [ # {{{
+    alsa-utils
     axel
     binutils
     ctags
@@ -241,15 +242,15 @@
 
   fonts = { # {{{
     fontDir.enable = true;
-    fonts = with pkgs; [
-      (nerdfonts.override { fonts = [ "DejaVuSansMono" ]; })
-      wqy_microhei
+    packages = [
+      (pkgs.nerdfonts.override { fonts = [ "DejaVuSansMono" ]; })
+      pkgs.wqy_microhei
     ];
   }; # }}}
 
   hardware.bluetooth.enable = true;
 
-  hardware.opengl.driSupport32Bit = true;
+  hardware.graphics.enable32Bit = true;
 
   hardware.trackpoint = { # {{{
     enable = true;
@@ -259,8 +260,9 @@
   }; # }}}
 
   i18n.inputMethod = { # {{{
-    enabled = "fcitx5";
+    enable = true;
     fcitx5.addons = with pkgs; [ fcitx5-chinese-addons ];
+    type = "fcitx5";
   }; # }}}
 
   location.provider = "geoclue2";
@@ -295,7 +297,7 @@
 
   nix.settings.substituters = [ # {{{
     "https://mirrors.ustc.edu.cn/nix-channels/store"
-    "https://mirror.sjtu.edu.cn/nix-channels/store"
+    "https://mirrors.sjtug.sjtu.edu.cn/nix-channels/store"
     "https://mirrors.bfsu.edu.cn/nix-channels/store"
     "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
   ]; # }}}
@@ -602,8 +604,6 @@
       ''; # }}}
     };
   }; # }}}
-
-  sound.enable = true;
 
   system.stateVersion = "21.03";
 
