@@ -571,7 +571,7 @@
         -- See the 'XMonad.Hooks.DynamicLog' extension for examples.
         myLogHook h = dynamicLogWithPP $ def
           { ppOutput = hPutStrLn h
-          , ppTitle  = xmobarColor "#00ab72" "" . shorten 46
+          , ppTitle  = xmobarColor "#00ab72" "" . shorten 37
           }
 
         -- Perform an arbitrary action each time xmonad starts or is restarted with mod-q.
